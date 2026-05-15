@@ -592,6 +592,169 @@
   }
   .ia-bottom-text strong { color: var(--white); }
 
+  /* ── MERCADO LIBRE ───────────────────────────────────── */
+  #mercadolibre { background: var(--black); }
+
+  .ml-hero {
+    padding: 120px 80px 80px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .ml-hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at center, rgba(255,255,255,0.04) 0%, transparent 65%);
+    pointer-events: none;
+  }
+  .ml-hero-inner { max-width: 760px; margin: 0 auto; position: relative; }
+
+  .ml-eyebrow {
+    display: inline-flex; align-items: center; gap: 12px; margin-bottom: 28px;
+  }
+  .ml-eyebrow-line { width: 24px; height: 1px; background: rgba(255,255,255,0.3); }
+  .ml-eyebrow-text {
+    font-size: 11px; font-weight: 700; letter-spacing: 2.5px;
+    text-transform: uppercase; color: rgba(255,255,255,0.4);
+  }
+
+  .ml-title {
+    font-family: 'DM Serif Display', Georgia, serif;
+    font-size: clamp(40px, 6vw, 72px);
+    color: var(--white);
+    line-height: 1.05;
+    letter-spacing: -1px;
+    margin-bottom: 24px;
+  }
+  .ml-title em { font-style: italic; color: rgba(255,255,255,0.55); }
+
+  .ml-subtitle {
+    font-size: 17px; color: rgba(255,255,255,0.45);
+    line-height: 1.7; margin-bottom: 56px; max-width: 580px; margin-left: auto; margin-right: auto;
+  }
+
+  .ml-quote {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 4px;
+    padding: 36px 40px;
+    text-align: left;
+    position: relative;
+  }
+  .ml-quote-mark {
+    font-family: 'DM Serif Display', serif;
+    font-size: 80px; line-height: 0.5;
+    color: rgba(255,255,255,0.12);
+    margin-bottom: 16px;
+  }
+  .ml-quote-text {
+    font-size: 20px; font-weight: 500;
+    color: var(--white); line-height: 1.6;
+    font-style: italic; margin-bottom: 20px;
+  }
+  .ml-quote-author {
+    font-size: 12px; font-weight: 600;
+    color: rgba(255,255,255,0.35);
+    text-transform: uppercase; letter-spacing: 1px;
+  }
+
+  .ml-body {
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    gap: 2px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 80px 0;
+  }
+
+  .ml-map-section {
+    background: rgba(255,255,255,0.03);
+    padding: 40px 32px;
+    border-radius: 4px 0 0 4px;
+    display: flex; flex-direction: column; align-items: center;
+  }
+  .ml-map-title {
+    font-size: 12px; font-weight: 700;
+    letter-spacing: 1.5px; text-transform: uppercase;
+    color: rgba(255,255,255,0.35); margin-bottom: 24px; text-align: center;
+  }
+  .ml-map { width: 180px; }
+  .ml-map-svg { width: 100%; height: auto; }
+  .ml-pulse-dot { animation: pulse-dot 2s ease-in-out infinite; }
+  .ml-pulse-ring {
+    opacity: 0;
+    animation: pulse-ring 2s ease-in-out infinite;
+    transform-origin: center;
+  }
+  @keyframes pulse-dot { 0%,100% { opacity:1; } 50% { opacity:0.6; } }
+  @keyframes pulse-ring {
+    0% { transform: scale(1); opacity: 0.6; }
+    100% { transform: scale(2.5); opacity: 0; }
+  }
+  .ml-map-caption {
+    font-size: 12px; color: rgba(255,255,255,0.3);
+    text-align: center; margin-top: 20px; line-height: 1.5;
+  }
+
+  .ml-pillars {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2px;
+  }
+  .ml-pillar {
+    background: rgba(255,255,255,0.03);
+    padding: 32px;
+    transition: background 0.3s;
+  }
+  .ml-pillar:hover { background: rgba(255,255,255,0.06); }
+  .ml-pillar-num {
+    font-size: 11px; font-weight: 700;
+    letter-spacing: 2px; color: rgba(255,255,255,0.2);
+    margin-bottom: 16px;
+  }
+  .ml-pillar-icon { font-size: 28px; margin-bottom: 12px; }
+  .ml-pillar-title {
+    font-size: 16px; font-weight: 700;
+    color: var(--white); margin-bottom: 10px; line-height: 1.3;
+  }
+  .ml-pillar-desc {
+    font-size: 13px; color: rgba(255,255,255,0.4); line-height: 1.7;
+  }
+
+  .ml-cta-bar {
+    margin: 2px 80px 0;
+    max-width: 1200px;
+    margin-left: auto; margin-right: auto;
+    padding: 0 80px;
+  }
+  .ml-cta-inner {
+    background: white;
+    border-radius: 0 0 4px 4px;
+    padding: 28px 40px;
+    display: flex; align-items: center;
+    justify-content: space-between; gap: 24px; flex-wrap: wrap;
+  }
+  .ml-cta-title { font-size: 17px; font-weight: 800; color: var(--black); margin-bottom: 4px; }
+  .ml-cta-sub { font-size: 13px; color: var(--gray-600); }
+  .ml-cta-actions { display: flex; gap: 12px; flex-wrap: wrap; }
+  .ml-cta-actions .btn-primary { background: var(--black); color: var(--white); }
+  .ml-cta-actions .btn-secondary { border-color: rgba(0,0,0,0.2); color: var(--gray-600); }
+  .ml-cta-actions .btn-secondary:hover { border-color: var(--black); color: var(--black); }
+
+  @media(max-width:1024px) {
+    .ml-hero { padding: 80px 24px 60px; }
+    .ml-body { grid-template-columns: 1fr; padding: 0 24px; }
+    .ml-map-section { border-radius: 4px 4px 0 0; }
+    .ml-pillars { grid-template-columns: 1fr; }
+    .ml-cta-bar { padding: 0 24px; }
+    .ml-cta-inner { flex-direction: column; align-items: flex-start; }
+  }
+  @media(max-width:640px) {
+    .ml-quote { padding: 24px; }
+    .ml-quote-text { font-size: 16px; }
+  }
+
   /* ── NEWSLETTER ──────────────────────────────────────── */
   #newsletter {
     background: var(--black);
@@ -831,6 +994,7 @@
     <li><a href="#quien-soy">Quién Soy</a></li>
     <li><a href="#propuesta">Propuesta</a></li>
     <li><a href="#ia">Gestión con IA</a></li>
+    <li><a href="#mercadolibre">Mercado Libre</a></li>
     <li><a href="#newsletter" class="nav-cta">Newsletter</a></li>
   </ul>
   <div class="nav-hamburger" onclick="toggleMenu()" aria-label="Menú">
@@ -843,6 +1007,7 @@
   <a href="#quien-soy" onclick="closeMenu()">Quién Soy</a>
   <a href="#propuesta" onclick="closeMenu()">Propuesta</a>
   <a href="#ia" onclick="closeMenu()">Gestión con IA</a>
+  <a href="#mercadolibre" onclick="closeMenu()">Mercado Libre</a>
   <a href="#newsletter" onclick="closeMenu()">Newsletter</a>
 </div>
 
@@ -1052,6 +1217,93 @@
       <strong>Transparencia total:</strong> Siempre indico cuándo uso IA y cómo. Los datos son públicos, el análisis es mío, las conclusiones las someto al debate. La IA no reemplaza el criterio político: lo amplifica.
     </p>
     <a href="#newsletter" class="btn-primary" style="flex-shrink:0">Recibí los análisis →</a>
+  </div>
+</section>
+
+<!-- MERCADO LIBRE -->
+<section id="mercadolibre">
+  <div class="ml-hero">
+    <div class="ml-hero-inner">
+      <div class="ml-eyebrow fade-up">
+        <div class="ml-eyebrow-line"></div>
+        <span class="ml-eyebrow-text">Propuesta Estratégica</span>
+        <div class="ml-eyebrow-line"></div>
+      </div>
+      <h2 class="ml-title fade-up fade-up-d1">¿Y si Mercado Libre<br><em>operara desde La Pampa?</em></h2>
+      <p class="ml-subtitle fade-up fade-up-d2">La Pampa está en el centro exacto del país. Tiene Zona Franca. Tiene beneficios impositivos. Solo falta que alguien lo proponga con seriedad.</p>
+      <div class="ml-quote fade-up fade-up-d3">
+        <div class="ml-quote-mark">"</div>
+        <p class="ml-quote-text">La Pampa tiene zona franca, tenemos beneficios impositivos que podemos agregar. Operá desde La Pampa, y te queda todo mucho más cerca.</p>
+        <div class="ml-quote-author">— Ramiro Passo · Radio 5 FM, General Pico</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="ml-body">
+    <div class="ml-map-section fade-up">
+      <div class="ml-map-wrap">
+        <div class="ml-map-title">La Pampa en el centro de Argentina</div>
+        <div class="ml-map">
+          <svg viewBox="0 0 300 500" fill="none" xmlns="http://www.w3.org/2000/svg" class="ml-map-svg">
+            <path d="M80,20 L220,20 L240,80 L260,140 L250,200 L230,260 L210,320 L190,380 L170,440 L150,480 L130,440 L110,380 L90,320 L70,260 L50,200 L40,140 L60,80 Z" fill="#1a1a1a" stroke="#333" stroke-width="1"/>
+            <ellipse cx="150" cy="220" rx="38" ry="30" fill="#222" stroke="#555" stroke-width="1.5"/>
+            <circle cx="150" cy="220" r="8" fill="white" class="ml-pulse-dot"/>
+            <circle cx="150" cy="220" r="8" fill="white" class="ml-pulse-ring"/>
+            <text x="150" y="268" text-anchor="middle" fill="white" font-size="11" font-weight="700" font-family="Inter,sans-serif">LA PAMPA</text>
+            <line x1="150" y1="220" x2="70" y2="100" stroke="rgba(255,255,255,0.15)" stroke-width="1" stroke-dasharray="4,4"/>
+            <line x1="150" y1="220" x2="230" y2="100" stroke="rgba(255,255,255,0.15)" stroke-width="1" stroke-dasharray="4,4"/>
+            <line x1="150" y1="220" x2="150" y2="420" stroke="rgba(255,255,255,0.15)" stroke-width="1" stroke-dasharray="4,4"/>
+            <circle cx="70" cy="95" r="4" fill="rgba(255,255,255,0.3)"/>
+            <text x="52" y="85" fill="rgba(255,255,255,0.4)" font-size="8" font-family="Inter,sans-serif">Mendoza</text>
+            <circle cx="232" cy="95" r="4" fill="rgba(255,255,255,0.3)"/>
+            <text x="218" y="85" fill="rgba(255,255,255,0.4)" font-size="8" font-family="Inter,sans-serif">Córdoba</text>
+            <circle cx="150" cy="422" r="4" fill="rgba(255,255,255,0.3)"/>
+            <text x="128" y="440" fill="rgba(255,255,255,0.4)" font-size="8" font-family="Inter,sans-serif">Patagonia</text>
+          </svg>
+        </div>
+        <div class="ml-map-caption">Equidistante de todas las regiones del país</div>
+      </div>
+    </div>
+
+    <div class="ml-pillars">
+      <div class="ml-pillar fade-up">
+        <div class="ml-pillar-num">01</div>
+        <div class="ml-pillar-icon">📍</div>
+        <h3 class="ml-pillar-title">Posición central única</h3>
+        <p class="ml-pillar-desc">La Pampa es el punto equidistante entre Buenos Aires, Mendoza, Córdoba y la Patagonia. Ninguna provincia del país tiene mejor ubicación para un hub logístico nacional.</p>
+      </div>
+      <div class="ml-pillar fade-up fade-up-d1">
+        <div class="ml-pillar-num">02</div>
+        <div class="ml-pillar-icon">🏛️</div>
+        <h3 class="ml-pillar-title">Zona Franca General Pico</h3>
+        <p class="ml-pillar-desc">La Pampa tiene una Zona Franca activa en General Pico con beneficios impositivos que ninguna otra provincia del centro puede ofrecer. Una ventaja competitiva real para grandes operadores.</p>
+      </div>
+      <div class="ml-pillar fade-up fade-up-d2">
+        <div class="ml-pillar-num">03</div>
+        <div class="ml-pillar-icon">💼</div>
+        <h3 class="ml-pillar-title">Miles de empleos directos</h3>
+        <p class="ml-pillar-desc">El centro logístico de Mercado Libre en Tres de Febrero generó 2.300 empleos directos. Un hub similar en La Pampa transformaría la economía provincial en una generación.</p>
+      </div>
+      <div class="ml-pillar fade-up fade-up-d3">
+        <div class="ml-pillar-num">04</div>
+        <div class="ml-pillar-icon">🚀</div>
+        <h3 class="ml-pillar-title">Inversión privada, no gasto público</h3>
+        <p class="ml-pillar-desc">La propuesta no requiere subsidios ni fondos del Estado. Solo condiciones claras, beneficios impositivos existentes, y un representante que haga la gestión en serio.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="ml-cta-bar fade-up">
+    <div class="ml-cta-inner">
+      <div>
+        <div class="ml-cta-title">Esta propuesta necesita respaldo ciudadano</div>
+        <div class="ml-cta-sub">Compartila y sumá voces. La Pampa tiene todo para ser el centro logístico del país.</div>
+      </div>
+      <div class="ml-cta-actions">
+        <a href="https://x.com/PassoRamiro" target="_blank" rel="noopener" class="btn-primary">Seguir en X →</a>
+        <a href="#newsletter" class="btn-secondary">Suscribite al newsletter</a>
+      </div>
+    </div>
   </div>
 </section>
 
