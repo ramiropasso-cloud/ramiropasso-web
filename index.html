@@ -1,0 +1,1176 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Ramiro Passo — Político pampeano. Renovación, gestión con datos e innovación para La Pampa.">
+<meta property="og:title" content="Ramiro Passo">
+<meta property="og:description" content="Renovación política. Gestión con datos. La Pampa.">
+<meta property="og:image" content="foto-perfil.jpg">
+<title>Ramiro Passo</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --black: #0A0A0A;
+    --white: #FFFFFF;
+    --gray-100: #F7F7F7;
+    --gray-200: #EBEBEB;
+    --gray-400: #999999;
+    --gray-600: #555555;
+    --gray-800: #222222;
+    --nav-h: 72px;
+  }
+
+  html { scroll-behavior: smooth; font-size: 16px; }
+
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    background: var(--white);
+    color: var(--black);
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ── NAV ─────────────────────────────────────────────── */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    height: var(--nav-h);
+    background: rgba(10,10,10,0.96);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 48px;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+  }
+
+  .nav-logo {
+    font-size: 17px;
+    font-weight: 800;
+    color: var(--white);
+    letter-spacing: -0.3px;
+    text-decoration: none;
+  }
+  .nav-logo span { color: var(--gray-400); font-weight: 400; }
+
+  .nav-links {
+    display: flex;
+    gap: 36px;
+    list-style: none;
+  }
+  .nav-links a {
+    color: rgba(255,255,255,0.65);
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.3px;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--white); }
+
+  .nav-social {
+    display: flex; gap: 16px; align-items: center;
+  }
+  .nav-social a {
+    color: rgba(255,255,255,0.45);
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 500;
+    transition: color 0.2s;
+  }
+  .nav-social a:hover { color: var(--white); }
+
+  .nav-cta {
+    background: var(--white);
+    color: var(--black) !important;
+    padding: 9px 22px;
+    border-radius: 4px;
+    font-weight: 700 !important;
+    font-size: 13px !important;
+    letter-spacing: 0.3px;
+    transition: opacity 0.2s !important;
+  }
+  .nav-cta:hover { opacity: 0.85; color: var(--black) !important; }
+
+  .nav-hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    padding: 8px;
+  }
+  .nav-hamburger span {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background: var(--white);
+    transition: all 0.3s;
+  }
+
+  /* ── HERO ─────────────────────────────────────────────── */
+  #inicio {
+    min-height: 100vh;
+    background: var(--black);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding-top: var(--nav-h);
+    overflow: hidden;
+  }
+
+  .hero-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 80px 64px 80px 80px;
+  }
+
+  .hero-eyebrow {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 32px;
+  }
+  .hero-eyebrow-line {
+    width: 32px;
+    height: 1px;
+    background: var(--gray-400);
+  }
+  .hero-eyebrow-text {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: var(--gray-400);
+  }
+
+  .hero-name {
+    font-family: 'DM Serif Display', Georgia, serif;
+    font-size: clamp(52px, 7vw, 84px);
+    color: var(--white);
+    line-height: 1.0;
+    letter-spacing: -1px;
+    margin-bottom: 8px;
+  }
+  .hero-name-last {
+    font-family: 'DM Serif Display', Georgia, serif;
+    font-size: clamp(52px, 7vw, 84px);
+    color: var(--white);
+    line-height: 1.0;
+    letter-spacing: -1px;
+    font-style: italic;
+    margin-bottom: 28px;
+  }
+
+  .hero-tagline {
+    font-size: 16px;
+    color: rgba(255,255,255,0.55);
+    line-height: 1.7;
+    max-width: 420px;
+    margin-bottom: 48px;
+    font-weight: 400;
+  }
+
+  .hero-tagline strong {
+    color: rgba(255,255,255,0.9);
+    font-weight: 600;
+  }
+
+  .hero-actions {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--white);
+    color: var(--black);
+    padding: 14px 28px;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: opacity 0.2s, transform 0.2s;
+    letter-spacing: 0.2px;
+  }
+  .btn-primary:hover { opacity: 0.88; transform: translateY(-1px); }
+
+  .btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: transparent;
+    color: rgba(255,255,255,0.8);
+    padding: 14px 28px;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    border: 1px solid rgba(255,255,255,0.2);
+    transition: border-color 0.2s, color 0.2s, transform 0.2s;
+    letter-spacing: 0.2px;
+  }
+  .btn-secondary:hover {
+    border-color: rgba(255,255,255,0.5);
+    color: var(--white);
+    transform: translateY(-1px);
+  }
+
+  .hero-stats {
+    display: flex;
+    gap: 40px;
+    margin-top: 64px;
+    padding-top: 40px;
+    border-top: 1px solid rgba(255,255,255,0.08);
+  }
+  .hero-stat-number {
+    font-size: 32px;
+    font-weight: 800;
+    color: var(--white);
+    line-height: 1;
+    margin-bottom: 6px;
+  }
+  .hero-stat-label {
+    font-size: 12px;
+    color: var(--gray-400);
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    line-height: 1.4;
+  }
+
+  .hero-social {
+    display: flex; gap: 20px; margin-top: 28px; flex-wrap: wrap;
+  }
+  .hero-social-link {
+    display: inline-flex; align-items: center; gap: 7px;
+    color: rgba(255,255,255,0.4);
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: 500;
+    transition: color 0.2s;
+    letter-spacing: 0.3px;
+  }
+  .hero-social-link:hover { color: rgba(255,255,255,0.85); }
+
+  .hero-image {
+    position: relative;
+    overflow: hidden;
+  }
+  .hero-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+    filter: grayscale(15%);
+    display: block;
+  }
+  .hero-image::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to right, rgba(10,10,10,0.3) 0%, transparent 40%);
+  }
+
+  /* ── DIVIDER ─────────────────────────────────────────── */
+  .section-divider {
+    height: 1px;
+    background: var(--gray-200);
+  }
+
+  /* ── QUIÉN SOY ───────────────────────────────────────── */
+  #quien-soy {
+    padding: 120px 80px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 100px;
+    align-items: center;
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+
+  .qs-label {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 28px;
+  }
+  .qs-label-line { width: 24px; height: 1px; background: var(--black); }
+  .qs-label-text {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: var(--gray-600);
+  }
+
+  .qs-title {
+    font-family: 'DM Serif Display', Georgia, serif;
+    font-size: clamp(36px, 4vw, 52px);
+    line-height: 1.1;
+    letter-spacing: -0.5px;
+    margin-bottom: 28px;
+    color: var(--black);
+  }
+  .qs-title em { font-style: italic; color: var(--gray-600); }
+
+  .qs-bio {
+    font-size: 16px;
+    line-height: 1.8;
+    color: var(--gray-600);
+    margin-bottom: 24px;
+  }
+  .qs-bio strong { color: var(--black); font-weight: 600; }
+
+  .qs-values {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-top: 40px;
+  }
+  .qs-value {
+    padding: 18px 20px;
+    background: var(--gray-100);
+    border-radius: 4px;
+  }
+  .qs-value-icon { font-size: 20px; margin-bottom: 8px; }
+  .qs-value-title { font-size: 13px; font-weight: 700; margin-bottom: 4px; }
+  .qs-value-desc { font-size: 12px; color: var(--gray-600); line-height: 1.5; }
+
+  .qs-image-wrap {
+    position: relative;
+  }
+  .qs-image-wrap img {
+    width: 100%;
+    border-radius: 4px;
+    display: block;
+    filter: grayscale(100%);
+    transition: filter 0.5s;
+  }
+  .qs-image-wrap:hover img { filter: grayscale(40%); }
+  .qs-image-badge {
+    position: absolute;
+    bottom: 28px;
+    left: 28px;
+    right: 28px;
+    background: rgba(10,10,10,0.92);
+    backdrop-filter: blur(8px);
+    padding: 18px 22px;
+    border-radius: 4px;
+    color: white;
+  }
+  .qs-image-badge-name { font-weight: 800; font-size: 15px; margin-bottom: 4px; }
+  .qs-image-badge-sub { font-size: 12px; color: rgba(255,255,255,0.55); }
+
+  /* ── PROPUESTA ───────────────────────────────────────── */
+  #propuesta {
+    background: var(--black);
+    padding: 120px 80px;
+  }
+
+  .prop-header {
+    max-width: 600px;
+    margin: 0 auto 80px;
+    text-align: center;
+  }
+  .prop-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 24px;
+  }
+  .prop-label-line { width: 20px; height: 1px; background: var(--gray-400); }
+  .prop-label-text {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: var(--gray-400);
+  }
+  .prop-title {
+    font-family: 'DM Serif Display', Georgia, serif;
+    font-size: clamp(36px, 4vw, 56px);
+    color: var(--white);
+    line-height: 1.1;
+    letter-spacing: -0.5px;
+    margin-bottom: 20px;
+  }
+  .prop-title em { font-style: italic; color: var(--gray-400); }
+  .prop-subtitle {
+    font-size: 15px;
+    color: rgba(255,255,255,0.45);
+    line-height: 1.7;
+  }
+
+  .prop-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .prop-card {
+    background: var(--gray-800);
+    padding: 40px 36px;
+    position: relative;
+    overflow: hidden;
+    transition: background 0.3s;
+  }
+  .prop-card:hover { background: #2a2a2a; }
+  .prop-card:first-child { border-radius: 4px 0 0 4px; }
+  .prop-card:last-child { border-radius: 0 4px 4px 0; }
+
+  .prop-card-num {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: var(--gray-400);
+    margin-bottom: 32px;
+    display: block;
+  }
+  .prop-card-icon { font-size: 32px; margin-bottom: 20px; display: block; }
+  .prop-card-title {
+    font-size: 19px;
+    font-weight: 700;
+    color: var(--white);
+    margin-bottom: 14px;
+    line-height: 1.2;
+  }
+  .prop-card-desc {
+    font-size: 14px;
+    color: rgba(255,255,255,0.45);
+    line-height: 1.7;
+  }
+  .prop-card-items {
+    list-style: none;
+    margin-top: 24px;
+    padding: 0;
+  }
+  .prop-card-items li {
+    font-size: 13px;
+    color: rgba(255,255,255,0.5);
+    padding: 8px 0;
+    border-top: 1px solid rgba(255,255,255,0.06);
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+    line-height: 1.4;
+  }
+  .prop-card-items li::before {
+    content: '→';
+    color: var(--gray-400);
+    flex-shrink: 0;
+    margin-top: 0px;
+  }
+
+  /* ── TRABAJANDO CON IA ───────────────────────────────── */
+  #ia {
+    padding: 120px 80px;
+    background: var(--white);
+  }
+
+  .ia-header {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: end;
+    max-width: 1200px;
+    margin: 0 auto 80px;
+  }
+
+  .ia-label {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 24px;
+  }
+  .ia-label-line { width: 24px; height: 1px; background: var(--black); }
+  .ia-label-text {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: var(--gray-600);
+  }
+
+  .ia-title {
+    font-family: 'DM Serif Display', Georgia, serif;
+    font-size: clamp(36px, 4vw, 52px);
+    line-height: 1.1;
+    letter-spacing: -0.5px;
+    color: var(--black);
+  }
+  .ia-title em { font-style: italic; color: var(--gray-600); }
+
+  .ia-intro {
+    font-size: 16px;
+    line-height: 1.8;
+    color: var(--gray-600);
+    align-self: end;
+  }
+  .ia-intro strong { color: var(--black); font-weight: 600; }
+
+  .ia-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2px;
+    max-width: 1200px;
+    margin: 0 auto 2px;
+  }
+
+  .ia-card {
+    background: var(--gray-100);
+    padding: 40px 40px;
+    transition: background 0.3s;
+    position: relative;
+  }
+  .ia-card:hover { background: var(--gray-200); }
+  .ia-card:first-child { border-radius: 4px 0 0 0; }
+  .ia-card:nth-child(2) { border-radius: 0 4px 0 0; }
+
+  .ia-card-tag {
+    display: inline-block;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    background: var(--black);
+    color: var(--white);
+    padding: 4px 10px;
+    border-radius: 2px;
+    margin-bottom: 24px;
+  }
+  .ia-card-icon { font-size: 28px; margin-bottom: 16px; display: block; }
+  .ia-card-title {
+    font-size: 17px;
+    font-weight: 700;
+    margin-bottom: 12px;
+    color: var(--black);
+  }
+  .ia-card-desc {
+    font-size: 14px;
+    color: var(--gray-600);
+    line-height: 1.7;
+    margin-bottom: 20px;
+  }
+  .ia-card-example {
+    background: var(--black);
+    color: rgba(255,255,255,0.75);
+    padding: 14px 18px;
+    border-radius: 4px;
+    font-size: 12px;
+    line-height: 1.6;
+    font-family: 'Inter', monospace;
+  }
+  .ia-card-example strong { color: var(--white); }
+
+  .ia-bottom-bar {
+    max-width: 1200px;
+    margin: 0 auto;
+    background: var(--black);
+    border-radius: 0 0 4px 4px;
+    padding: 28px 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    flex-wrap: wrap;
+  }
+  .ia-bottom-text {
+    font-size: 14px;
+    color: rgba(255,255,255,0.6);
+    max-width: 560px;
+    line-height: 1.6;
+  }
+  .ia-bottom-text strong { color: var(--white); }
+
+  /* ── NEWSLETTER ──────────────────────────────────────── */
+  #newsletter {
+    background: var(--black);
+    padding: 120px 80px;
+    position: relative;
+    overflow: hidden;
+  }
+  #newsletter::before {
+    content: '';
+    position: absolute;
+    width: 600px; height: 600px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(255,255,255,0.04) 0%, transparent 70%);
+    top: -200px; right: -100px;
+    pointer-events: none;
+  }
+
+  .nl-inner {
+    max-width: 640px;
+    margin: 0 auto;
+    text-align: center;
+    position: relative;
+  }
+
+  .nl-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 28px;
+  }
+  .nl-label-line { width: 20px; height: 1px; background: var(--gray-400); }
+  .nl-label-text {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: var(--gray-400);
+  }
+
+  .nl-title {
+    font-family: 'DM Serif Display', Georgia, serif;
+    font-size: clamp(32px, 4vw, 52px);
+    color: var(--white);
+    line-height: 1.1;
+    letter-spacing: -0.5px;
+    margin-bottom: 20px;
+  }
+  .nl-title em { font-style: italic; color: var(--gray-400); }
+
+  .nl-subtitle {
+    font-size: 15px;
+    color: rgba(255,255,255,0.45);
+    line-height: 1.7;
+    margin-bottom: 48px;
+  }
+
+  .nl-form {
+    display: flex;
+    gap: 0;
+    max-width: 480px;
+    margin: 0 auto 24px;
+    border-radius: 4px;
+    overflow: hidden;
+    border: 1px solid rgba(255,255,255,0.15);
+    transition: border-color 0.2s;
+  }
+  .nl-form:focus-within { border-color: rgba(255,255,255,0.4); }
+
+  .nl-input {
+    flex: 1;
+    background: rgba(255,255,255,0.06);
+    border: none;
+    padding: 16px 20px;
+    color: var(--white);
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    outline: none;
+  }
+  .nl-input::placeholder { color: rgba(255,255,255,0.3); }
+
+  .nl-btn {
+    background: var(--white);
+    color: var(--black);
+    border: none;
+    padding: 16px 24px;
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: opacity 0.2s;
+    letter-spacing: 0.3px;
+    white-space: nowrap;
+  }
+  .nl-btn:hover { opacity: 0.88; }
+
+  .nl-privacy {
+    font-size: 12px;
+    color: rgba(255,255,255,0.25);
+    line-height: 1.6;
+  }
+
+  .nl-features {
+    display: flex;
+    gap: 32px;
+    justify-content: center;
+    margin-top: 48px;
+    flex-wrap: wrap;
+  }
+  .nl-feature {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 13px;
+    color: rgba(255,255,255,0.45);
+  }
+  .nl-feature-dot { width: 4px; height: 4px; border-radius: 50%; background: var(--gray-400); }
+
+  /* ── FOOTER ──────────────────────────────────────────── */
+  footer {
+    background: #050505;
+    padding: 40px 80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-top: 1px solid rgba(255,255,255,0.05);
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+
+  .footer-logo {
+    font-size: 15px;
+    font-weight: 800;
+    color: var(--white);
+    text-decoration: none;
+  }
+  .footer-logo span { color: var(--gray-400); font-weight: 400; }
+
+  .footer-links {
+    display: flex;
+    gap: 28px;
+    list-style: none;
+  }
+  .footer-links a {
+    font-size: 13px;
+    color: var(--gray-400);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  .footer-links a:hover { color: var(--white); }
+
+  .footer-copy {
+    font-size: 12px;
+    color: #444;
+  }
+
+  /* ── ANIMACIONES ─────────────────────────────────────── */
+  .fade-up {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+  .fade-up.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .fade-up-d1 { transition-delay: 0.1s; }
+  .fade-up-d2 { transition-delay: 0.2s; }
+  .fade-up-d3 { transition-delay: 0.3s; }
+  .fade-up-d4 { transition-delay: 0.4s; }
+
+  /* ── RESPONSIVE ──────────────────────────────────────── */
+  @media (max-width: 1024px) {
+    #inicio { grid-template-columns: 1fr; }
+    .hero-image { height: 60vw; }
+    .hero-content { padding: 60px 40px; }
+    #quien-soy { grid-template-columns: 1fr; gap: 48px; padding: 80px 40px; }
+    .qs-image-wrap { order: -1; }
+    .prop-grid { grid-template-columns: 1fr; gap: 2px; }
+    .prop-card:first-child { border-radius: 4px 4px 0 0; }
+    .prop-card:last-child { border-radius: 0 0 4px 4px; }
+    .ia-header { grid-template-columns: 1fr; gap: 24px; }
+    .ia-grid { grid-template-columns: 1fr; }
+    .ia-card:first-child { border-radius: 4px 4px 0 0; }
+    .ia-card:nth-child(2) { border-radius: 0; }
+    nav { padding: 0 24px; }
+    .nav-links { display: none; }
+    .nav-hamburger { display: flex; }
+    #propuesta, #ia, #newsletter, footer { padding-left: 24px; padding-right: 24px; }
+    .ia-bottom-bar { flex-direction: column; align-items: flex-start; }
+    footer { padding: 32px 24px; }
+  }
+
+  @media (max-width: 640px) {
+    .hero-content { padding: 40px 24px; }
+    .hero-stats { gap: 24px; }
+    .qs-values { grid-template-columns: 1fr; }
+    .nl-form { flex-direction: column; border-radius: 4px; }
+    .nl-input { border-radius: 4px 4px 0 0; }
+    .nl-btn { border-radius: 0 0 4px 4px; padding: 14px 24px; }
+    #quien-soy { padding: 60px 24px; }
+  }
+
+  /* ── MOBILE NAV ──────────────────────────────────────── */
+  .mobile-nav {
+    display: none;
+    position: fixed;
+    top: var(--nav-h);
+    left: 0; right: 0;
+    background: rgba(10,10,10,0.98);
+    backdrop-filter: blur(16px);
+    z-index: 999;
+    padding: 24px;
+    flex-direction: column;
+    gap: 4px;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+  }
+  .mobile-nav.open { display: flex; }
+  .mobile-nav a {
+    color: rgba(255,255,255,0.7);
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 500;
+    padding: 12px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+    transition: color 0.2s;
+  }
+  .mobile-nav a:hover { color: var(--white); }
+  .mobile-nav a:last-child { border-bottom: none; }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#inicio" class="nav-logo">Ramiro <span>Passo</span></a>
+  <ul class="nav-links">
+    <li><a href="#quien-soy">Quién Soy</a></li>
+    <li><a href="#propuesta">Propuesta</a></li>
+    <li><a href="#ia">Gestión con IA</a></li>
+    <li><a href="#newsletter" class="nav-cta">Newsletter</a></li>
+  </ul>
+  <div class="nav-hamburger" onclick="toggleMenu()" aria-label="Menú">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+<!-- MOBILE NAV -->
+<div class="mobile-nav" id="mobileNav">
+  <a href="#quien-soy" onclick="closeMenu()">Quién Soy</a>
+  <a href="#propuesta" onclick="closeMenu()">Propuesta</a>
+  <a href="#ia" onclick="closeMenu()">Gestión con IA</a>
+  <a href="#newsletter" onclick="closeMenu()">Newsletter</a>
+</div>
+
+<!-- HERO -->
+<section id="inicio">
+  <div class="hero-content">
+    <div class="hero-eyebrow fade-up">
+      <div class="hero-eyebrow-line"></div>
+      <span class="hero-eyebrow-text">Político · La Pampa · UCR</span>
+    </div>
+    <div class="hero-name fade-up fade-up-d1">Ramiro</div>
+    <div class="hero-name-last fade-up fade-up-d1">Passo</div>
+    <p class="hero-tagline fade-up fade-up-d2">
+      <strong>Renovación real.</strong> Gestión transparente con datos abiertos.
+      La Pampa merece un representante que trabaje con las herramientas del presente.
+    </p>
+    <div class="hero-actions fade-up fade-up-d3">
+      <a href="#propuesta" class="btn-primary">Ver propuesta →</a>
+      <a href="#newsletter" class="btn-secondary">Suscribite al newsletter</a>
+    </div>
+    <div class="hero-social fade-up fade-up-d3">
+      <a href="https://x.com/PassoRamiro" target="_blank" rel="noopener" class="hero-social-link">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.742l7.73-8.835L1.254 2.25H8.08l4.259 5.63 5.905-5.63zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+        @Passoramiro
+      </a>
+      <a href="https://instagram.com/ramiro.passo" target="_blank" rel="noopener" class="hero-social-link">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+        @ramiro.passo
+      </a>
+    </div>
+    <div class="hero-stats fade-up fade-up-d4">
+      <div>
+        <div class="hero-stat-number">33</div>
+        <div class="hero-stat-label">años comprometido<br>con La Pampa</div>
+      </div>
+      <div>
+        <div class="hero-stat-number">+30</div>
+        <div class="hero-stat-label">municipios radicales<br>en la provincia</div>
+      </div>
+      <div>
+        <div class="hero-stat-number">2027</div>
+        <div class="hero-stat-label">el año del cambio<br>en La Pampa</div>
+      </div>
+    </div>
+  </div>
+  <div class="hero-image">
+    <img src="foto-perfil.jpg" alt="Ramiro Passo">
+  </div>
+</section>
+
+<!-- QUIÉN SOY -->
+<section id="quien-soy">
+  <div class="qs-image-wrap fade-up">
+    <img src="foto-perfil.jpg" alt="Ramiro Passo">
+    <div class="qs-image-badge">
+      <div class="qs-image-badge-name">Ramiro Passo</div>
+      <div class="qs-image-badge-sub">General Pico · La Pampa · UCR</div>
+    </div>
+  </div>
+  <div>
+    <div class="qs-label fade-up">
+      <div class="qs-label-line"></div>
+      <span class="qs-label-text">Quién soy</span>
+    </div>
+    <h2 class="qs-title fade-up fade-up-d1">Un radical que cree en <em>hacer</em>, no solo en decir.</h2>
+    <p class="qs-bio fade-up fade-up-d2">
+      Tengo 33 años y soy de <strong>General Pico</strong>. Crecí en una familia con historia política en La Pampa —  mi padre, Juan Carlos Passo, dedicó su vida al radicalismo pampeano— y eso me enseñó que la política es responsabilidad, no privilegio.
+    </p>
+    <p class="qs-bio fade-up fade-up-d2">
+      Creo en una UCR que <strong>se renueva o pierde relevancia</strong>. Creo en datos abiertos, en propuestas fundamentadas y en representar a los pampeanos con herramientas del siglo XXI. No alcanza con la experiencia heredada: hay que construir lo que viene.
+    </p>
+    <div class="qs-values fade-up fade-up-d3">
+      <div class="qs-value">
+        <div class="qs-value-icon">🔍</div>
+        <div class="qs-value-title">Transparencia</div>
+        <div class="qs-value-desc">Cada análisis, cada proyecto y cada decisión, explicados con claridad y datos públicos.</div>
+      </div>
+      <div class="qs-value">
+        <div class="qs-value-icon">⚡</div>
+        <div class="qs-value-title">Renovación real</div>
+        <div class="qs-value-desc">No alcanza con ser joven. Hay que tener propuestas distintas y demostrar que funcionan.</div>
+      </div>
+      <div class="qs-value">
+        <div class="qs-value-icon">🤝</div>
+        <div class="qs-value-title">Unidad opositora</div>
+        <div class="qs-value-desc">La Pampa tiene una oportunidad histórica en 2027. Se gana unido, con propuesta, no dividido.</div>
+      </div>
+      <div class="qs-value">
+        <div class="qs-value-icon">📊</div>
+        <div class="qs-value-title">Gestión con datos</div>
+        <div class="qs-value-desc">Las decisiones políticas deben estar respaldadas por información real, no por intuición.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- PROPUESTA -->
+<section id="propuesta">
+  <div class="prop-header">
+    <div class="prop-label fade-up">
+      <div class="prop-label-line"></div>
+      <span class="prop-label-text">Propuesta</span>
+      <div class="prop-label-line"></div>
+    </div>
+    <h2 class="prop-title fade-up fade-up-d1">Tres ejes para <em>transformar</em> La Pampa</h2>
+    <p class="prop-subtitle fade-up fade-up-d2">Propuestas concretas, verificables y fundamentadas en datos reales de la provincia.</p>
+  </div>
+  <div class="prop-grid">
+    <div class="prop-card fade-up">
+      <span class="prop-card-num">01</span>
+      <span class="prop-card-icon">🏛️</span>
+      <h3 class="prop-card-title">Transparencia y datos abiertos</h3>
+      <p class="prop-card-desc">El Estado pampeano debe publicar todo lo que administra. Los ciudadanos tienen derecho a saber en qué se usa cada peso.</p>
+      <ul class="prop-card-items">
+        <li>Portal de presupuesto público en tiempo real</li>
+        <li>Coparticipación municipal transparente y equitativa</li>
+        <li>Fin de la discrecionalidad en fondos de obra pública</li>
+        <li>Rendición de cuentas mensual y verificable</li>
+      </ul>
+    </div>
+    <div class="prop-card fade-up fade-up-d1">
+      <span class="prop-card-num">02</span>
+      <span class="prop-card-icon">🌾</span>
+      <h3 class="prop-card-title">Economía real para La Pampa</h3>
+      <p class="prop-card-desc">La Pampa vive del campo, la industria y los servicios. Necesitamos políticas que acompañen a los que producen, no que los condicionen.</p>
+      <ul class="prop-card-items">
+        <li>Crédito accesible para productores agropecuarios</li>
+        <li>Reducción de burocracia para PyMEs locales</li>
+        <li>Infraestructura vial: rutas y caminos rurales</li>
+        <li>Apoyo a cooperativas y economía regional</li>
+      </ul>
+    </div>
+    <div class="prop-card fade-up fade-up-d2">
+      <span class="prop-card-num">03</span>
+      <span class="prop-card-icon">🤝</span>
+      <h3 class="prop-card-title">Renovación institucional</h3>
+      <p class="prop-card-desc">40 años de peronismo ininterrumpido no son un mérito: son una señal de que la oposición debe presentar algo genuinamente diferente.</p>
+      <ul class="prop-card-items">
+        <li>UCR renovada con liderazgos jóvenes y propuestas claras</li>
+        <li>Unidad opositora para 2027: UCR + PRO + aliados</li>
+        <li>Representación real de los 30+ municipios radicales</li>
+        <li>Defensa del federalismo y autonomía municipal</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- TRABAJANDO CON IA -->
+<section id="ia">
+  <div class="ia-header">
+    <div>
+      <div class="ia-label fade-up">
+        <div class="ia-label-line"></div>
+        <span class="ia-label-text">Gestión con IA</span>
+      </div>
+      <h2 class="ia-title fade-up fade-up-d1">Usando inteligencia artificial <em>para trabajar mejor</em></h2>
+    </div>
+    <p class="ia-intro fade-up fade-up-d2">
+      Soy el primer político de La Pampa que usa IA no como discurso, sino como <strong>herramienta de trabajo diaria</strong>.
+      Analizo datos, escucho a los pampeanos, y produzco propuestas con rigor técnico que antes requería equipos enteros.
+      Acá mostramos exactamente cómo.
+    </p>
+  </div>
+
+  <div class="ia-grid">
+    <div class="ia-card fade-up">
+      <span class="ia-card-tag">Análisis</span>
+      <span class="ia-card-icon">📊</span>
+      <h3 class="ia-card-title">Datos públicos, explicados claro</h3>
+      <p class="ia-card-desc">Tomo datos del INDEC, el presupuesto provincial y las estadísticas de La Pampa, los proceso con IA y los traduzco a lenguaje ciudadano. Sin jerga técnica, con conclusiones accionables.</p>
+      <div class="ia-card-example">
+        <strong>Ejemplo real:</strong> "Analicé con IA el presupuesto 2025 de La Pampa. Solo el 18% llega a los municipios. Acá está el desglose completo →"
+      </div>
+    </div>
+    <div class="ia-card fade-up fade-up-d1">
+      <span class="ia-card-tag">Escucha</span>
+      <span class="ia-card-icon">🗣️</span>
+      <h3 class="ia-card-title">Los problemas que me contaron este mes</h3>
+      <p class="ia-card-desc">Cada mes publico un informe con los 10 problemas más mencionados por pampeanos a través de un formulario abierto. La IA clasifica, yo propongo soluciones concretas y verificables.</p>
+      <div class="ia-card-example">
+        <strong>Ejemplo real:</strong> "127 pampeanos me escribieron en abril. El problema #1: rutas en mal estado en el interior. Mi propuesta →"
+      </div>
+    </div>
+    <div class="ia-card fade-up fade-up-d2">
+      <span class="ia-card-tag">Propuestas</span>
+      <span class="ia-card-icon">📝</span>
+      <h3 class="ia-card-title">Proyectos antes de presentarlos, abiertos</h3>
+      <p class="ia-card-desc">Uso IA para investigar y redactar proyectos de ley y ordenanza con rigor técnico. Los publico en borrador para recibir feedback ciudadano antes de presentarlos formalmente.</p>
+      <div class="ia-card-example">
+        <strong>Ejemplo real:</strong> "Estoy redactando un proyecto sobre [tema]. Antes de presentarlo: ¿qué agregarías? Comentá acá →"
+      </div>
+    </div>
+    <div class="ia-card fade-up fade-up-d3">
+      <span class="ia-card-tag">Comunicación</span>
+      <span class="ia-card-icon">🎙️</span>
+      <h3 class="ia-card-title">Más contenido, más claro, más rápido</h3>
+      <p class="ia-card-desc">La IA me permite producir análisis, infografías, resúmenes legislativos y contenido educativo en una fracción del tiempo. El resultado: más información de calidad para más pampeanos.</p>
+      <div class="ia-card-example">
+        <strong>Ejemplo real:</strong> "Sesión de Diputados en 60 segundos: esto es lo que se votó y cómo afecta a La Pampa →"
+      </div>
+    </div>
+  </div>
+  <div class="ia-bottom-bar fade-up">
+    <p class="ia-bottom-text">
+      <strong>Transparencia total:</strong> Siempre indico cuándo uso IA y cómo. Los datos son públicos, el análisis es mío, las conclusiones las someto al debate. La IA no reemplaza el criterio político: lo amplifica.
+    </p>
+    <a href="#newsletter" class="btn-primary" style="flex-shrink:0">Recibí los análisis →</a>
+  </div>
+</section>
+
+<!-- NEWSLETTER -->
+<section id="newsletter">
+  <div class="nl-inner">
+    <div class="nl-label fade-up">
+      <div class="nl-label-line"></div>
+      <span class="nl-label-text">Newsletter</span>
+      <div class="nl-label-line"></div>
+    </div>
+    <h2 class="nl-title fade-up fade-up-d1">La política pampeana, <em>analizada cada semana</em></h2>
+    <p class="nl-subtitle fade-up fade-up-d2">
+      Cada semana: un análisis político con datos reales, una propuesta concreta, y lo más relevante de La Pampa.
+      Sin spam. Sin bajada de línea. Solo información que sirve.
+    </p>
+    <form class="nl-form fade-up fade-up-d3" onsubmit="handleSubmit(event)">
+      <input
+        type="email"
+        class="nl-input"
+        placeholder="tu@email.com"
+        required
+        id="emailInput"
+      >
+      <button type="submit" class="nl-btn">Suscribirme</button>
+    </form>
+    <p class="nl-privacy fade-up fade-up-d3">Sin spam. Podés darte de baja cuando quieras.</p>
+    <div class="nl-features fade-up fade-up-d4">
+      <div class="nl-feature">
+        <div class="nl-feature-dot"></div>
+        <span>Análisis semanal</span>
+      </div>
+      <div class="nl-feature">
+        <div class="nl-feature-dot"></div>
+        <span>Datos reales</span>
+      </div>
+      <div class="nl-feature">
+        <div class="nl-feature-dot"></div>
+        <span>Sin costo</span>
+      </div>
+      <div class="nl-feature">
+        <div class="nl-feature-dot"></div>
+        <span>Baja libre</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <a href="#inicio" class="footer-logo">Ramiro <span>Passo</span></a>
+  <ul class="footer-links">
+    <li><a href="#quien-soy">Quién Soy</a></li>
+    <li><a href="#propuesta">Propuesta</a></li>
+    <li><a href="#ia">Gestión con IA</a></li>
+    <li><a href="https://instagram.com/ramiro.passo" target="_blank" rel="noopener">Instagram</a></li>
+    <li><a href="https://x.com/PassoRamiro" target="_blank" rel="noopener">X / Twitter</a></li>
+  </ul>
+  <span class="footer-copy">© 2026 Ramiro Passo · General Pico, La Pampa</span>
+</footer>
+
+<script>
+  // Scroll animations
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+        observer.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+  document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+  // Mobile nav
+  function toggleMenu() {
+    document.getElementById('mobileNav').classList.toggle('open');
+  }
+  function closeMenu() {
+    document.getElementById('mobileNav').classList.remove('open');
+  }
+
+  // Active nav link on scroll
+  const sections = document.querySelectorAll('section[id]');
+  window.addEventListener('scroll', () => {
+    const scrollY = window.scrollY + 100;
+    sections.forEach(section => {
+      const top = section.offsetTop;
+      const height = section.offsetHeight;
+      const id = section.getAttribute('id');
+      const link = document.querySelector(`.nav-links a[href="#${id}"]`);
+      if (link) {
+        if (scrollY >= top && scrollY < top + height) {
+          link.style.color = 'rgba(255,255,255,0.95)';
+        } else {
+          link.style.color = '';
+        }
+      }
+    });
+  });
+
+  // Newsletter form
+  function handleSubmit(e) {
+    e.preventDefault();
+    const email = document.getElementById('emailInput').value;
+    const btn = e.target.querySelector('.nl-btn');
+    btn.textContent = '¡Listo! ✓';
+    btn.style.background = '#22c55e';
+    btn.style.color = 'white';
+    // CONECTAR ACÁ: reemplazar con tu servicio de newsletter
+    // Opciones: Mailchimp, Brevo, Beehiiv, Substack, o mailto
+    console.log('Nuevo suscriptor:', email);
+    setTimeout(() => {
+      btn.textContent = 'Suscribirme';
+      btn.style.background = '';
+      btn.style.color = '';
+      e.target.reset();
+    }, 3000);
+  }
+</script>
+</body>
+</html>
