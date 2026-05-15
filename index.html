@@ -1068,13 +1068,13 @@
       Cada semana: un análisis político con datos reales, una propuesta concreta, y lo más relevante de La Pampa.
       Sin spam. Sin bajada de línea. Solo información que sirve.
     </p>
-    <form class="nl-form fade-up fade-up-d3" onsubmit="handleSubmit(event)">
+    <form class="nl-form fade-up fade-up-d3" action="https://formspree.io/f/mqenvroj" method="POST">
       <input
         type="email"
+        name="email"
         class="nl-input"
         placeholder="tu@email.com"
         required
-        id="emailInput"
       >
       <button type="submit" class="nl-btn">Suscribirme</button>
     </form>
@@ -1153,24 +1153,6 @@
     });
   });
 
-  // Newsletter form
-  function handleSubmit(e) {
-    e.preventDefault();
-    const email = document.getElementById('emailInput').value;
-    const btn = e.target.querySelector('.nl-btn');
-    btn.textContent = '¡Listo! ✓';
-    btn.style.background = '#22c55e';
-    btn.style.color = 'white';
-    // CONECTAR ACÁ: reemplazar con tu servicio de newsletter
-    // Opciones: Mailchimp, Brevo, Beehiiv, Substack, o mailto
-    console.log('Nuevo suscriptor:', email);
-    setTimeout(() => {
-      btn.textContent = 'Suscribirme';
-      btn.style.background = '';
-      btn.style.color = '';
-      e.target.reset();
-    }, 3000);
-  }
 </script>
 </body>
 </html>
